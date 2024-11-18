@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример сайта</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Открытая часть -->
+        <section id="open-section">
+            <h1>Открытая часть сайта</h1>
+            <p>Эта информация доступна всем пользователям.</p>
+            <button onclick="showLogin()">Войти</button>
+            <button onclick="showRegister()">Зарегистрироваться</button>
+        </section>
+
+        <!-- Форма авторизации -->
+        <section id="login-section" class="hidden">
+            <h2>Авторизация</h2>
+            <form id="login-form">
+                <label for="login-username">Имя пользователя:</label>
+                <input type="text" id="login-username" required>
+                <label for="login-password">Пароль:</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Войти</button>
+            </form>
+            <button onclick="showOpen()">Назад</button>
+        </section>
+
+        <!-- Форма регистрации -->
+        <section id="register-section" class="hidden">
+            <h2>Регистрация</h2>
+            <form id="register-form">
+                <label for="register-username">Имя пользователя:</label>
+                <input type="text" id="register-username" required>
+                <label for="register-password">Пароль:</label>
+                <input type="password" id="register-password" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+            <button onclick="showOpen()">Назад</button>
+        </section>
+
+        <!-- Закрытая часть -->
+        <section id="protected-section" class="hidden">
+            <h1>Закрытая часть сайта</h1>
+            <p id="welcome-message"></p>
+            <button onclick="logout()">Выйти</button>
+        </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
